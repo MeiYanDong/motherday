@@ -349,7 +349,7 @@
                 <source src="YOUR_SUNO_MUSIC_FILE.mp3" type="audio/mpeg">
                 您的浏览器不支持音频播放。
             </audio>
-            <p style="font-size:0.8em; color: #888;">(温馨提示：请点击播放按钮聆听为您准备的音乐。如果您已提供音乐文件，请将上方 `YOUR_SUNO_MUSIC_FILE.mp3` 替换为实际文件名或链接)</p>
+            <p style="font-size:0.8em; color: #888;">(温馨提示：请点击播放按钮聆听为您准备的音乐。)</p>
 
             <div id="lyrics-container" style="display: none;">
                 <h3>专属歌词：《致邱新艳妈妈》</h3>
@@ -375,7 +375,7 @@
                 <span class="word-cloud-item">善良</span>
                 <span class="word-cloud-item medium">勤劳</span>
                 <span class="word-cloud-item">慈爱</span>
-                <span class="word-cloud-item large">优雅</span>
+                <span class="word-cloud-item large">节俭</span>
                 <span class="word-cloud-item">坚强</span>
                 <span class="word-cloud-item">美丽</span>
                 <span class="word-cloud-item medium">包容</span>
@@ -485,11 +485,11 @@
             // 修正之前文本修改错误的地方
             const blessingTitle = document.querySelector('#blessing-text-container h2');
             if (blessingTitle && blessingTitle.textContent.includes("我的的温馨祝福")) {
-                blessingTitle.textContent = "AI的温馨祝福：";
+                blessingTitle.textContent = "我的的温馨祝福：";
             }
             const wordcloudIntro = document.querySelector('#wordcloud-section p:first-of-type');
             if (wordcloudIntro && wordcloudIntro.textContent.includes("我的温馨祝福：眼中")) {
-                 wordcloudIntro.textContent = "AI眼中的您，汇聚了世间所有的美好：";
+                 wordcloudIntro.textContent = "我眼中的您，汇聚了世间所有的美好：";
             }
 
         });
@@ -512,7 +512,7 @@
             
             // 模拟AI祝福语 (Grok API)
             const blessings = [
-                `亲爱的${motherName}，在这特别的日子里，愿AI的祝福化作一缕阳光，温暖您的心房。您的智慧与慈爱，是家中不灭的灯塔，照亮我们前行的方向。母亲节快乐！`,
+                `亲爱的${motherName}，在这特别的日子里，愿我的祝福化作一缕阳光，温暖您的心房。您的智慧与慈爱，是家中不灭的灯塔，照亮我们前行的方向。母亲节快乐！`,
                 `${motherName}，您就像一位技艺精湛的程序员，用爱编写了我们家庭幸福的每一行代码。今天，AI也为您送上最诚挚的祝福：愿您笑容常在，幸福安康，母亲节快乐！`,
                 `致我们最爱的${motherName}：AI或许能计算星辰，却难以衡量您爱的深度。愿这份小小的科技心意，能带给您大大的快乐。祝您母亲节身体健康，万事如意！`
             ];
