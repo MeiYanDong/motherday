@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>献给邱新艳妈妈的母亲节礼物</title>
+    <style>
+        /* 基本重置和全局样式 */
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', 'Microsoft YaHei', sans-serif;
+            background-color: #fdf6f9; /* 淡粉色背景 */
+            color: #5c3a50; /* 深紫色文字 */
+            overflow-x: hidden; /* 防止水平滚动 */
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            box-sizing: border-box;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 600px; /* 稍微减小最大宽度以适应移动端 */
+            padding: 15px; /* 调整内边距 */
+            background-color: #fff;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* 调整阴影 */
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        .section {
+            display: none; /* 默认隐藏所有部分 */
+            padding: 15px; /* 调整内边距 */
+            animation: fadeIn 0.8s ease-in-out;
+        }
+
+        .active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h1, h2, h3 {
+            color: #d87093; /* 柔和的玫瑰色 */
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+        h1 { font-size: 1.8em; }
+        h2 { font-size: 1.5em; }
+        h3 { font-size: 1.2em; }
+
+
+        p {
+            line-height: 1.7; /* 调整行高 */
+            font-size: 1em; /* 标准字体大小 */
+            margin-bottom: 12px;
+        }
+
+        button {
+            background-color: #d87093; /* 柔和的玫瑰色 */
+            color: white;
+            border: none;
+            padding: 10px 20px; /* 调整按钮内边距 */
+            font-size: 1em; /* 调整按钮字体大小 */
+            border-radius: 20px; /* 调整圆角 */
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 3px 8px rgba(216, 112, 147, 0.3);
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background-color: #c76183; /* 深一点的玫瑰色 */
+            transform: translateY(-1px);
+        }
+
+        button:active {
+            transform: translateY(0px);
+        }
+
+        /* 开场动画 */
+        #opening-animation {
+            font-size: 1.8em; /* 调整字体大小 */
+            font-weight: bold;
+            animation: bloom 2s ease-in-out forwards;
+        }
+
+        @keyframes bloom {
+            0% { opacity: 0; transform: scale(0.5); }
+            70% { opacity: 1; transform: scale(1.1); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+
+        /* AI祝福 */
+        #blessing-text {
+            font-style: italic;
+            padding: 12px;
+            background-color: #fdf0f4;
+            border-left: 4px solid #d87093;
+            border-radius: 5px;
+            min-height: 40px; /* 确保有空间显示 */
+            font-size: 0.95em;
+        }
+        
+        /* 打字机效果 */
+        .typewriter {
+            overflow: hidden; 
+            white-space: pre-wrap; 
+            animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
+            animation-fill-mode: forwards; 
+        }
+
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: #d87093; }
+        }
+
+
+        /* 歌词 */
+        #lyrics-container {
+            margin-top: 15px;
+            padding: 12px;
+            background-color: #f9f0f3;
+            border-radius: 8px;
+            max-height: 180px; /* 调整最大高度 */
+            overflow-y: auto;
+        }
+        #lyrics-container h3 {
+            margin-top: 0;
+        }
+        #lyrics-content p {
+            font-size: 0.9em; /* 调整歌词字体 */
+            white-space: pre-line; 
+        }
+
+        /* 词云 */
+        #word-cloud-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 8px; /* 调整间隙 */
+            padding: 15px;
+            border: 2px dashed #d87093;
+            border-radius: 10px;
+            background-color: #fff8fa;
+        }
+        .word-cloud-item {
+            padding: 6px 12px; /* 调整内边距 */
+            background-color: #eecdd7;
+            color: #5c3a50;
+            border-radius: 15px; /* 调整圆角 */
+            font-size: 0.9em; /* 基础字体大小 */
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+        .word-cloud-item:hover {
+            transform: scale(1.05); /* 调整悬浮效果 */
+            background-color: #d87093;
+            color: white;
+            cursor: default;
+        }
+        .word-cloud-item.large { font-size: 1.4em; padding: 10px 18px; } /* 调整大号词字体 */
+        .word-cloud-item.medium { font-size: 1.1em; padding: 8px 15px; } /* 调整中号词字体 */
+
+
+        /* AI绘画提示词 */
+        #ai-art-prompts {
+            margin-top: 15px;
+            text-align: left;
+        }
+        #ai-art-prompts ul {
+            list-style-type: '🎨'; 
+            padding-left: 25px; /* 调整内边距 */
+        }
+        #ai-art-prompts li {
+            margin-bottom: 8px;
+            padding-left: 8px;
+            font-size: 0.9em;
+        }
+
+        /* 爱心动画 */
+        #heart-animation-section {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(253, 246, 249, 0.95); /* 之前是0.9，稍微调不透明一点 */
+            z-index: 1000;
+            display: flex; /* JS会控制 */
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 10px; /* 给边缘一些空间 */
+            box-sizing: border-box;
+        }
+        .heart {
+            position: absolute;
+            width: 15px; /* 减小爱心大小 */
+            height: 15px;
+            background-color: red;
+            transform: rotate(-45deg);
+            animation: heartBeat 5s infinite ease-out;
+        }
+        .heart::before,
+        .heart::after {
+            content: '';
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            background-color: red;
+            border-radius: 50%;
+        }
+        .heart::before {
+            top: -7.5px; /* 调整位置 */
+            left: 0;
+        }
+        .heart::after {
+            top: 0;
+            left: 7.5px; /* 调整位置 */
+        }
+        @keyframes heartBeat {
+            0% { transform: scale(0.4) rotate(-45deg); opacity: 0; } /* 调整初始大小 */
+            20% { opacity: 1; }
+            50% { transform: scale(1) rotate(-45deg); opacity: 0.8; } /* 调整最大大小 */
+            100% { transform: scale(0.4) rotate(-45deg) translateY(-150px); opacity: 0; } /* 调整漂移距离 */
+        }
+        #heart-message {
+            font-size: 2em; /* 调整字体大小 */
+            color: #d81b60; 
+            font-weight: bold;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.2); /* 调整阴影 */
+            z-index: 1001; 
+            position: relative; 
+        }
+        #heart-message p {
+             margin: 8px 0;
+             font-size: 1em; /* 继承父级大小, 实际为2em */
+        }
+
+
+        /* 投资页面 */
+        #investment-section .investment-details {
+            background-color: #f9f0f3;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+        #investment-section .investment-details p {
+            font-size: 1em; /* 调整字体大小 */
+            margin: 6px 0;
+        }
+        #investment-section .investment-details strong {
+            color: #c76183;
+        }
+
+        /* 弹窗样式 */
+        .modal {
+            display: none; 
+            position: fixed; 
+            z-index: 2000; 
+            left: 0;
+            top: 0;
+            width: 100%; 
+            height: 100%; 
+            overflow: auto; 
+            background-color: rgba(0,0,0,0.6); /* 稍微加深背景 */
+            justify-content: center;
+            align-items: center;
+            padding: 10px; /* 确保弹窗内容不会贴边 */
+            box-sizing: border-box;
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: auto;
+            padding: 20px; /* 调整内边距 */
+            border: 1px solid #888;
+            width: 90%; /* 调整宽度 */
+            max-width: 350px; /* 调整最大宽度 */
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.25); /* 调整阴影 */
+        }
+        .modal-content input[type="number"] {
+            width: calc(100% - 22px); /* 考虑边框和内边距 */
+            padding: 8px;
+            margin-top: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 0.95em;
+        }
+        .modal-buttons button {
+            margin: 5px; /* 调整按钮间距 */
+            padding: 8px 15px; /* 调整按钮内边距 */
+        }
+        
+        audio {
+            margin-top: 15px;
+            width: 90%; /* 调整宽度 */
+            max-width: 400px;
+        }
+
+        /* 响应式调整，针对非常小的屏幕 */
+        @media (max-width: 360px) {
+            h1 { font-size: 1.6em; }
+            h2 { font-size: 1.3em; }
+            h3 { font-size: 1.1em; }
+            p { font-size: 0.95em; }
+            button { padding: 8px 15px; font-size: 0.95em; }
+            #opening-animation { font-size: 1.6em; }
+            #heart-message { font-size: 1.8em; }
+            .word-cloud-item.large { font-size: 1.2em; padding: 8px 15px; }
+            .word-cloud-item.medium { font-size: 1em; padding: 6px 12px; }
+            .word-cloud-item { font-size: 0.85em; padding: 5px 10px; }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="opening-section" class="section active">
+            <p id="opening-animation">献给最爱的邱新艳妈妈</p>
+            <button onclick="nextSection('greeting-section')">开启今日惊喜</button>
+        </div>
+
+        <div id="greeting-section" class="section">
+            <h1>邱新艳妈妈，请领取您的今日专属祝福</h1>
+            <button onclick="showBlessing()">点我领取祝福</button>
+            <div id="blessing-text-container" style="display: none;">
+                <h2>我的温馨祝福：</h2> <p id="blessing-text"></p>
+            </div>
+            
+            <audio id="background-music" controls loop>
+                <source src="YOUR_SUNO_MUSIC_FILE.mp3" type="audio/mpeg">
+                您的浏览器不支持音频播放。
+            </audio>
+            <p style="font-size:0.8em; color: #888;">(温馨提示：请点击播放按钮聆听为您准备的音乐。如果您已提供音乐文件，请将上方 `YOUR_SUNO_MUSIC_FILE.mp3` 替换为实际文件名或链接)</p>
+
+            <div id="lyrics-container" style="display: none;">
+                <h3>专属歌词：《致邱新艳妈妈》</h3>
+                <div id="lyrics-content">
+                    <p>（音乐前奏）</p>
+                    <p>岁月轻拂发梢，时光刻下美好，<br>邱新艳妈妈，您的微笑是家中至宝。</p>
+                    <p>温柔似春雨，滋润我心田，<br>智慧如明灯，照亮我路远。</p>
+                    <p>（音乐间奏）</p>
+                    <p>您的臂膀，曾是我的港湾，<br>您的鼓励，伴我越过万水千山。<br>邱新艳妈妈，这份爱深沉似海洋，<br>感恩的心，为您把歌儿轻轻唱。</p>
+                    <p>（音乐高潮）</p>
+                    <p>愿时光温柔待您，邱新艳妈妈，<br>愿幸福永远围绕，在您的身旁。<br>母亲节快乐，我最亲爱的妈妈，<br>这份祝福，愿它温暖您心房。</p>
+                    <p>（音乐尾奏）</p>
+                </div>
+            </div>
+            <button onclick="nextSection('wordcloud-section')" style="display:none;" id="to-wordcloud-btn">继续探索惊喜</button>
+        </div>
+
+        <div id="wordcloud-section" class="section">
+            <h2>邱新艳妈妈，您是如此闪耀！</h2>
+            <p>AI眼中的您，汇聚了世间所有的美好：</p> <div id="word-cloud-container">
+                <span class="word-cloud-item large">温柔</span>
+                <span class="word-cloud-item medium">智慧</span>
+                <span class="word-cloud-item">善良</span>
+                <span class="word-cloud-item medium">勤劳</span>
+                <span class="word-cloud-item">慈爱</span>
+                <span class="word-cloud-item large">优雅</span>
+                <span class="word-cloud-item">坚强</span>
+                <span class="word-cloud-item">美丽</span>
+                <span class="word-cloud-item medium">包容</span>
+                <span class="word-cloud-item">奉献</span>
+            </div>
+            <div id="ai-art-prompts">
+                <h3>🎨 AI绘画/视频灵感：</h3>
+                <p>亲爱的，您可以把下面的文字复制到AI绘画或AI视频工具中，看看能为邱新艳妈妈生成怎样独一无二的艺术作品！</p>
+                <ul>
+                    <li>"一张充满艺术感的肖像画，捕捉邱新艳妈妈温柔的微笑和智慧的眼神，背景是她最喜欢的丁香花（或其他她喜欢的花），光线柔和温暖，风格类似印象派。"</li>
+                    <li>"邱新艳妈妈在阳光明媚的春日花园中，被五彩斑斓的花朵簇拥，脸上洋溢着幸福满足的笑容，温馨治愈的画面，动漫艺术风格。"</li>
+                    <li>"具有未来科技感的抽象艺术作品，以流动的光线和柔和的几何图形，象征邱新艳妈妈的智慧与包容，主色调为宁静的蓝色与温暖的金色。"</li>
+                    <li>"动态视频：邱新艳妈妈的人生片段如电影般闪回，从青春到当下，每一个重要时刻都闪耀着母爱的光辉，背景音乐轻柔感人，旁白充满感恩。"</li>
+                </ul>
+            </div>
+            <button onclick="startHeartAnimation()">感受这份爱与美好</button>
+        </div>
+
+        <div id="heart-animation-section" class="section" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(253, 246, 249, 0.95); z-index: 1000; display: none; flex-direction: column; align-items: center; justify-content: center;">
+            <div id="heart-message">
+                <p>邱新艳妈妈，我爱您！</p>
+                <p>母亲节快乐！</p>
+            </div>
+            <button onclick="nextSection('investment-section'); stopHeartAnimation();" style="margin-top: 30px; z-index:1001; position:relative;">查看您的“幸福存折”</button>
+        </div>
+
+
+        <div id="investment-section" class="section">
+            <h2>邱新艳妈妈的“幸福存折”</h2>
+            <div class="investment-details">
+                <p>持有人：<strong>邱新艳妈妈</strong></p>
+                <p>“爱心”本金：<strong>1000 元</strong> (满满的心意)</p>
+                <p>已“存”天数：<strong>13 天</strong> (幸福的累积)</p>
+                <p>当前“爱心”收益：<strong>4 元</strong> (温暖的回报)</p>
+            </div>
+            <button onclick="openInvestmentModal()">是否为这份“幸福”追加投入？</button>
+        </div>
+        
+        <div id="investmentModal" class="modal">
+            <div class="modal-content">
+                <h3 id="modalTitle">亲爱的邱新艳妈妈，是否要为这份“幸福”追加投入呢？</h3>
+                <div id="initialOptions" class="modal-buttons">
+                    <button onclick="handleInvestmentChoice(true)">是，追加幸福！</button>
+                    <button onclick="handleInvestmentChoice(false)">否，心意已满</button>
+                </div>
+                <div id="amountInputDiv" style="display:none;">
+                    <p>您想追加多少“幸福”呢？</p>
+                    <input type="number" id="investmentAmount" placeholder="请输入金额" min="0">
+                    <button onclick="confirmInvestment()">确认追加</button>
+                    <button onclick="closeInvestmentModal()" style="background-color: #aaa;">取消</button>
+                </div>
+                <p id="modalMessage" style="margin-top:15px;"></p>
+            </div>
+        </div>
+
+
+        <div id="final-section" class="section">
+            <h2>最真挚的祝福</h2>
+            <p id="final-message">愿邱新艳妈妈的每一天都充满阳光与欢笑，健康、平安、幸福！母亲节快乐，我们永远爱您！</p>
+            <img src="https://placehold.co/400x300/d87093/ffffff?text=温馨全家福+占位图" alt="温馨全家福占位图" style="max-width:100%; border-radius:10px; margin-top:20px;">
+            <p style="font-size:0.8em; color: #888;">(这里可以替换成一张真实的全家福照片)</p>
+            <button onclick="resetGift()">再次体验这份惊喜</button>
+        </div>
+
+    </div>
+
+    <script>
+        let currentSection = 'opening-section';
+        const motherName = "邱新艳妈妈"; // 全局定义妈妈的名字
+
+        // 初始化时，替换所有需要妈妈名字的地方
+        document.addEventListener('DOMContentLoaded', () => {
+            // 替换标题和文本中的妈妈名字
+            document.title = `献给${motherName}的母亲节礼物`;
+            const elementsToPersonalize = document.querySelectorAll('h1, h2, p, button, #modalTitle, #final-message, #opening-animation');
+            elementsToPersonalize.forEach(el => {
+                if (el.id === 'opening-animation') {
+                     el.textContent = `献给最爱的${motherName}`;
+                } else if (el.textContent.includes("邱新艳妈妈")) {
+                    el.textContent = el.textContent.replace(/邱新艳妈妈/g, motherName);
+                } else if (el.id === 'modalTitle' && el.textContent.includes("亲爱的邱新艳妈妈")) {
+                     el.textContent = `亲爱的${motherName}，是否要为这份“幸福”追加投入呢？`;
+                } else if (el.id === 'final-message' && el.textContent.includes("愿邱新艳妈妈")) {
+                     el.textContent = `愿${motherName}的每一天都充满阳光与欢笑，健康、平安、幸福！母亲节快乐，我们永远爱您！`;
+                }
+            });
+            
+            // 更新歌词标题
+            const lyricsTitle = document.querySelector('#lyrics-container h3');
+            if (lyricsTitle) lyricsTitle.textContent = `专属歌词：《致${motherName}》`;
+            
+            // 更新歌词内容
+            const lyricsContentP = document.querySelectorAll('#lyrics-content p');
+            lyricsContentP.forEach(p => {
+                p.innerHTML = p.innerHTML.replace(/邱新艳妈妈/g, motherName);
+            });
+
+            // 更新投资详情持有人
+            const investmentHolder = document.querySelector('#investment-section .investment-details p:first-child strong');
+            if(investmentHolder) investmentHolder.textContent = motherName;
+
+            // 更新爱心动画信息
+            const heartMessageP = document.querySelectorAll('#heart-message p');
+            if(heartMessageP.length > 0) heartMessageP[0].textContent = `${motherName}，我爱您！`;
+            if(heartMessageP.length > 1) heartMessageP[1].textContent = `${motherName}，母亲节快乐！`;
+
+            // 修正之前文本修改错误的地方
+            const blessingTitle = document.querySelector('#blessing-text-container h2');
+            if (blessingTitle && blessingTitle.textContent.includes("我的的温馨祝福")) {
+                blessingTitle.textContent = "AI的温馨祝福：";
+            }
+            const wordcloudIntro = document.querySelector('#wordcloud-section p:first-of-type');
+            if (wordcloudIntro && wordcloudIntro.textContent.includes("我的温馨祝福：眼中")) {
+                 wordcloudIntro.textContent = "AI眼中的您，汇聚了世间所有的美好：";
+            }
+
+        });
+
+
+        function nextSection(sectionId) {
+            const currentEl = document.getElementById(currentSection);
+            const nextEl = document.getElementById(sectionId);
+            if (currentEl) currentEl.classList.remove('active');
+            if (nextEl) nextEl.classList.add('active');
+            currentSection = sectionId;
+            window.scrollTo(0, 0); // 切换后滚动到页面顶部
+        }
+
+        function showBlessing() {
+            const blessingTextEl = document.getElementById('blessing-text');
+            const blessingContainer = document.getElementById('blessing-text-container');
+            const lyricsContainer = document.getElementById('lyrics-container');
+            const toWordCloudBtn = document.getElementById('to-wordcloud-btn');
+            
+            // 模拟AI祝福语 (Grok API)
+            const blessings = [
+                `亲爱的${motherName}，在这特别的日子里，愿AI的祝福化作一缕阳光，温暖您的心房。您的智慧与慈爱，是家中不灭的灯塔，照亮我们前行的方向。母亲节快乐！`,
+                `${motherName}，您就像一位技艺精湛的程序员，用爱编写了我们家庭幸福的每一行代码。今天，AI也为您送上最诚挚的祝福：愿您笑容常在，幸福安康，母亲节快乐！`,
+                `致我们最爱的${motherName}：AI或许能计算星辰，却难以衡量您爱的深度。愿这份小小的科技心意，能带给您大大的快乐。祝您母亲节身体健康，万事如意！`
+            ];
+            const chosenBlessing = blessings[Math.floor(Math.random() * blessings.length)];
+            
+            blessingTextEl.textContent = ''; 
+            blessingTextEl.classList.remove('typewriter'); // 移除以重置动画
+            void blessingTextEl.offsetWidth; // 触发重绘，确保动画重置生效
+            blessingTextEl.classList.add('typewriter'); 
+            blessingTextEl.style.width = '0'; 
+            blessingContainer.style.display = 'block';
+
+            let i = 0;
+            function typeWriter() {
+                if (i < chosenBlessing.length) {
+                    blessingTextEl.textContent += chosenBlessing.charAt(i);
+                    i++;
+                    const steps = chosenBlessing.length;
+                    const duration = Math.max(1, steps * 0.08); // 保证至少1秒，避免过快
+                    blessingTextEl.style.animation = `typing ${duration}s steps(${steps}, end) forwards, blink-caret .75s step-end infinite`;
+                    blessingTextEl.style.width = '100%'; 
+                    setTimeout(typeWriter, 80); 
+                } else {
+                    blessingTextEl.classList.remove('typewriter'); 
+                    blessingTextEl.style.borderRight = 'none'; 
+                    if(lyricsContainer) lyricsContainer.style.display = 'block';
+                    if(toWordCloudBtn) toWordCloudBtn.style.display = 'inline-block'; 
+                    
+                    const musicPlayer = document.getElementById('background-music');
+                    if (musicPlayer && typeof musicPlayer.play === 'function') {
+                         musicPlayer.play().catch(e => console.log("自动播放失败，用户需手动播放:", e));
+                    }
+                }
+            }
+            typeWriter();
+        }
+
+        // let heartInterval; // 这个变量似乎没有被使用，可以移除
+        function startHeartAnimation() {
+            nextSection('heart-animation-section');
+            const heartSection = document.getElementById('heart-animation-section');
+            if (!heartSection) return;
+            heartSection.style.display = 'flex'; 
+
+            const existingHearts = heartSection.querySelectorAll('.heart');
+            existingHearts.forEach(h => h.remove());
+            
+            for (let i = 0; i < 20; i++) { // 减少爱心数量以优化移动端性能
+                createHeart(heartSection);
+            }
+        }
+
+        function createHeart(container) {
+            if (!container) return;
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+            heart.style.left = Math.random() * 100 + 'vw'; // vw for viewport width
+            heart.style.animationDuration = (Math.random() * 2 + 3) + 's'; 
+            heart.style.animationDelay = Math.random() * 1.5 + 's'; // 减少延迟随机范围
+            container.appendChild(heart);
+
+            heart.addEventListener('animationend', () => {
+                heart.remove();
+                // 只在当前页面活动时补充爱心
+                if (document.getElementById('heart-animation-section') && document.getElementById('heart-animation-section').style.display === 'flex') {
+                     // 为避免无限创建，可以考虑限制总量或频率
+                     // createHeart(container); // 暂时注释掉自动补充，以观察性能
+                }
+            });
+        }
+        
+        function stopHeartAnimation() {
+            const heartSection = document.getElementById('heart-animation-section');
+            if (!heartSection) return;
+            heartSection.style.display = 'none';
+            const existingHearts = heartSection.querySelectorAll('.heart');
+            existingHearts.forEach(h => h.remove());
+        }
+
+
+        const investmentModal = document.getElementById('investmentModal');
+        const modalTitle = document.getElementById('modalTitle');
+        const initialOptions = document.getElementById('initialOptions');
+        const amountInputDiv = document.getElementById('amountInputDiv');
+        const modalMessage = document.getElementById('modalMessage');
+        const investmentAmountInput = document.getElementById('investmentAmount');
+
+
+        function openInvestmentModal() {
+            if (!investmentModal || !modalTitle || !initialOptions || !amountInputDiv || !modalMessage) return;
+            modalTitle.textContent = `亲爱的${motherName}，是否要为这份“幸福”追加投入呢？`;
+            initialOptions.style.display = 'block';
+            amountInputDiv.style.display = 'none';
+            modalMessage.textContent = '';
+            investmentModal.style.display = 'flex';
+        }
+
+        function closeInvestmentModal() {
+            if (!investmentModal) return;
+            investmentModal.style.display = 'none';
+            setTimeout(() => {
+                nextSection('final-section');
+            }, 1500);
+        }
+
+        function handleInvestmentChoice(choice) {
+            if (!initialOptions || !amountInputDiv || !modalTitle || !investmentAmountInput) return;
+            if (choice) { 
+                initialOptions.style.display = 'none';
+                amountInputDiv.style.display = 'block';
+                modalTitle.textContent = '您想追加多少“幸福”呢？';
+                investmentAmountInput.value = ''; 
+            } else { 
+                if(modalMessage) modalMessage.textContent = '您的爱已经满满当当！这份心意最珍贵！';
+                initialOptions.style.display = 'none'; 
+                setTimeout(closeInvestmentModal, 2500); 
+            }
+        }
+
+        function confirmInvestment() {
+            if (!investmentAmountInput || !modalMessage || !amountInputDiv) return;
+            const amount = investmentAmountInput.value;
+            if (amount && parseFloat(amount) >= 0) {
+                modalMessage.textContent = `感谢您追加了 ${amount} 元的“幸福”！${motherName}的幸福银行又多了一份爱！`;
+            } else if (parseFloat(amount) < 0) {
+                 modalMessage.textContent = '追加的幸福不能是负数哦，请输入一个正数或0。';
+                 return; 
+            }
+            else {
+                modalMessage.textContent = `${motherName}的幸福银行感谢您的心意！`; 
+            }
+            amountInputDiv.style.display = 'none'; 
+            setTimeout(closeInvestmentModal, 3000); 
+        }
+        
+        function resetGift() {
+            stopHeartAnimation(); 
+            if (investmentModal && investmentModal.style.display === 'flex') {
+                closeInvestmentModal(); 
+            }
+            
+            const allSections = document.querySelectorAll('.section');
+            allSections.forEach(sec => sec.classList.remove('active'));
+            
+            const openingEl = document.getElementById('opening-section');
+            if (openingEl) openingEl.classList.add('active');
+            currentSection = 'opening-section';
+            
+            const blessingContainer = document.getElementById('blessing-text-container');
+            const blessingTextEl = document.getElementById('blessing-text');
+            const lyricsContainer = document.getElementById('lyrics-container');
+            const toWordCloudBtn = document.getElementById('to-wordcloud-btn');
+
+            if(blessingContainer) blessingContainer.style.display = 'none';
+            if(blessingTextEl) blessingTextEl.textContent = '';
+            if(lyricsContainer) lyricsContainer.style.display = 'none';
+            if(toWordCloudBtn) toWordCloudBtn.style.display = 'none';
+            
+            const music = document.getElementById('background-music');
+            if (music && typeof music.pause === 'function') {
+                music.pause();
+                music.currentTime = 0;
+            }
+            
+            window.scrollTo(0, 0);
+        }
+    </script>
+</body>
+</html>
